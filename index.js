@@ -7,9 +7,7 @@ const { writeFile } = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 // const questions = [];
 
-const promptReadme = readmeData => {
-    const readmeData = [];
-
+const promptReadme = () => {
     return inquirer
         .prompt([
             {
@@ -89,11 +87,55 @@ const promptReadme = readmeData => {
                       return false;
                   }
               }
+            },
+            {
+              type: 'list',
+              name: 'license',
+              message: 'Choose a license you would like to add.',
+              choices: [
+                  'Apache License 2.0',
+                  'GNU General Public License v3.0',
+                  'MIT License'
+              ],
+            },
+            {
+              type: 'input',
+              name: 'username',
+              message: 'Enter your GitHub username.',
+              validate: usernameInput => {
+                  if (usernameInput) {
+                      return true;
+                  } else {
+                      console.log('Please enter your username!');
+                      return false;
+                  }
+              }
+            },
+            {
+              type: 'input',
+              name: 'email',
+              message: 'Enter your contact email address.',
+              validate: emailInput => {
+                  if (emailInput) {
+                      return true;
+                  } else {
+                      console.log('Please enter your email address!');
+                      return false;
+                  }
+              }
             }
-
         ])
+        .then(readmeData => {
+            return readmeData;
+        })
 
 }
 
 // Function call to initialize app
-promptReadme();
+promptReadme()
+    .then(readmeData => {
+        return generateReadme(readmeData);
+    })
+    .then(markDown => {
+        console.log(markDown);
+    });
