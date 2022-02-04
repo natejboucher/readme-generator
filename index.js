@@ -1,11 +1,7 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const generateReadme = require('./src/readme-template');
-const { writeFile } = require('./utils/generateMarkdown');
-
-
-// TODO: Create an array of questions for user input
-// const questions = [];
+const writeFile = require('./utils/generateMarkdown');
 
 const promptReadme = () => {
     return inquirer
@@ -95,7 +91,8 @@ const promptReadme = () => {
               choices: [
                   'Apache License 2.0',
                   'GNU General Public License v3.0',
-                  'MIT License'
+                  'MIT License',
+                  'None'
               ],
             },
             {
@@ -137,5 +134,11 @@ promptReadme()
         return generateReadme(readmeData);
     })
     .then(markDown => {
-        console.log(markDown);
+       return writeFile(markDown);
+    })
+    .then(writeFileResponse => {
+        console.log(writeFileResponse);
+    })
+    .catch(err => {
+        console.log(err);
     });
