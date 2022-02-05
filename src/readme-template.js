@@ -1,25 +1,44 @@
-// // TODO: Create a function that returns a license badge based on which license is passed in
-// // If there is no license, return an empty string
-function renderLicenseBadge(license) {}
+// function to pull license badge
+const renderLicenseBadge = license => {
+    if (license === 'Apache License 2.0') {
+        return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)';
+    } else if (license === 'GNU General Public License v3.0') {
+        return '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)';
+    } else if (license === 'MIT License') {
+        return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)';
+    } else {
+        return '';
+    }
+}
+// function to pull link to license information
+const renderLicenseLink = license => {
+    if (license === 'Apache License 2.0') {
+        return 'https://www.apache.org/licenses/LICENSE-2.0';
+    } else if (license === 'GNU General Public License v3.0') {
+        return 'https://www.gnu.org/licenses/gpl-3.0.en.html';
+    } else if (license === 'MIT License') {
+        return 'https://choosealicense.com/licenses/mit/';
+    } else {
+        return '';
+    }
+}
+//function to render license section of readme
+const renderLicenseSection = license => {
+    if (license === 'None') {
+        return '';
+    }
+    return `
+## License
+This application is covered under: ${license}, [License Link](${renderLicenseLink(license)})
+`;
 
-// // TODO: Create a function that returns the license link
-// // If there is no license, return an empty string
-// function renderLicenseLink(license) {}
-
-// // TODO: Create a function that returns the license section of README
-// // If there is no license, return an empty string
-// function renderLicenseSection(license) {}
-
-
-
+}
+// function to render entire readme page.
 module.exports = data => {
     return `
 # ${data.name}
+${renderLicenseBadge(data.license)}
 
-## Badges
-    
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-    
 ## Description
     
 ${data.description}
@@ -37,11 +56,8 @@ ${data.install}
     
 ## Usage
     
-${data.usage}
-    
-## License
-    
-${data.license}
+${data.usage} 
+${renderLicenseSection(data.license)}
     
 ## Features
     

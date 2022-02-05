@@ -1,5 +1,5 @@
 const fs = require('fs');
-
+// function to write the readme file.
 const writeFile = fileContent => {
   return new Promise((resolve, reject) => {
     fs.writeFile('./dist/README.md', fileContent, err => {
@@ -14,5 +14,4 @@ const writeFile = fileContent => {
     });
   });
 };
-
 module.exports = writeFile;

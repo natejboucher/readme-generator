@@ -1,13 +1,10 @@
 
-# safecation
+# asdfasdfas
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
-## Badges
-    
-![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
-    
 ## Description
     
-this is the description
+asdfsadfasdf
     
 ## Table of Contents
     
@@ -18,15 +15,15 @@ this is the description
     
 ## Installation
     
-this is the installation instructions
+asdfsadfsadf
     
 ## Usage
     
-this is the usage instructions
-    
+asdfsdfasf 
+
 ## License
-    
-Apache License 2.0
+This application is covered under: GNU General Public License v3.0, [License Link](https://www.gnu.org/licenses/gpl-3.0.en.html)
+
     
 ## Features
     
@@ -34,12 +31,12 @@ If your project has a lot of features, list them here.
     
 ## How to Contribute
     
-this is how to contribute to the page
+asdfasfdasdf
     
 ## Tests
     
-this is the tests and examples for the project
+asdfsafas
     
 ## Questions?
     
-Contact me via [Github](https://github.com/natejboucher) or Email: <natejboucher@gmail.com>
+Contact me via [Github](https://github.com/natejboucher) or Email: <asdfadsfas>
