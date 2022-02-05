@@ -36,7 +36,7 @@ This application is covered under: ${license}, [License Link](${renderLicenseLin
 // function to render entire readme page.
 module.exports = data => {
     return `
-# ${data.name} ${renderLicenseBadge(data.license)}
+# ${data.name} | ${renderLicenseBadge(data.license)}
 
 ## About the Project:
     
@@ -46,32 +46,30 @@ ${data.description}
     
 - [Installation](#installation)
 - [Usage](#usage)
-- [Credits](#credits)
-- [License](#license)
-    
+- [Contribute](#contribute)
+- [Testing](#tests)
+- [Questions](#questions)
+
+<a name="installation"></a>
 ## Installation:
     
 ${data.install}
-    
+<a name="usage"></a>
 ## Usage Information:
     
 ${data.usage} 
 ${renderLicenseSection(data.license)}
-    
-## Features:
-    
-If your project has a lot of features, list them here.
-    
+<a name="contribute"></a>
 ## How to Contribute:
     
 ${data.contribution}
-    
+<a name="tests"></a>
 ## Tests:
     
 ${data.test}
-    
+<a name="questions"></a>
 ## Questions?
-    
+
 Contact me via [Github](https://github.com/${data.username}) or Email: <${data.email}>
 `;
 
