@@ -36,10 +36,9 @@ This application is covered under: ${license}, [License Link](${renderLicenseLin
 // function to render entire readme page.
 module.exports = data => {
     return `
-# ${data.name}
-${renderLicenseBadge(data.license)}
+# ${data.name} ${renderLicenseBadge(data.license)}
 
-## Description
+## About the Project:
     
 ${data.description}
     
@@ -50,24 +49,24 @@ ${data.description}
 - [Credits](#credits)
 - [License](#license)
     
-## Installation
+## Installation:
     
 ${data.install}
     
-## Usage
+## Usage Information:
     
 ${data.usage} 
 ${renderLicenseSection(data.license)}
     
-## Features
+## Features:
     
 If your project has a lot of features, list them here.
     
-## How to Contribute
+## How to Contribute:
     
 ${data.contribution}
     
-## Tests
+## Tests:
     
 ${data.test}
     
